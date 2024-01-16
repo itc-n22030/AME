@@ -21,22 +21,22 @@
 ## 機能一覧
 | 管理者画面 |　確認画面 |
 | ---- | ---- |
-| ![管理者画面](/image/出席確認.png) | ![確認画面](/docs/img/app-view/login_1.1.png) |
+| ![管理者画面](/image/出席確認.png) | ![確認画面](/image/フォルダ.png) |
 | ここでは管理者がシートの確認・作成・削除を行う | フォルダから確認・修正したいシートを選択 |
 
 | 作成画面 |　削除画面 |
 | ---- | ---- |
-| ![作成画面](/docs/img/app-view/select-business_1.1.png) | ![削除画面](/docs/img/app-view/create-invoice_1.1.png) |
+| ![作成画面](/image/作成画面.png) | ![削除画面](/image/削除.png) |
 | slackのチャンネルID、シートID、シート名を入力 | 作成画面と同様の入力を行う |
 
 | 時間内の場合 |　シート画面 |
 | ---- | ---- |
-| ![時間内メッセージ](/docs/img/app-view/invoice-detail_1.1.png) | ![　シート画面１](/docs/img/app-view/print-invoice_1.1.png) |
+| ![時間内メッセージ](/image/時間内メッセージ.png) | ![　シート画面１](/image/時間内シート.png) |
 | slackで出席を入力すると時間内であれば通常のメッセージを出力 | シートには2の値を出力 |
 
 | 遅刻の場合 |　シート画面 |
 | ---- | ---- |
-| ![遅刻メッセージ](/docs/img/app-view/select-master_1.1.png) | ![　シート画面２](/docs/img/app-view/master-register-form_1.1.png) |
+| ![遅刻メッセージ](/image/遅刻メッセージ.png) | ![　シート画面２](/image/遅刻シート.png) |
 | 遅刻の場合は遅刻メッセージを出力 | シートには1の値を出力 |
 
 <br />

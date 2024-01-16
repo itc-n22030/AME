@@ -41,14 +41,15 @@
 
 <br />
 
-## 使用技術
+## 使用環境
 
 | Category          | Technology Stack                                     |
 | ----------------- | --------------------------------------------------   |
-| Frontend          | TypeScript, Next.js, Storybook                       |
-| Backend           | TypeScript, NestJS, Prisma                           |
-| Infrastructure    | Amazon Web Services, Vercel                          |
-| Database          | PostgreSQL                                           |
+| OS                | Windows11                                            |
+| frontend          | HTML/CSS, TypeScript                                 |
+| Backend           | TypeScript, Node.js                                  |
+| Infrastructure    | GCP                     |
+| Database          | MySQL                                                |
 | Monitoring        | Sentry, UptimeRobot                                  |
 | Environment setup | Docker                                               |
 | CI/CD             | GitHub Actions                                       |
@@ -57,15 +58,31 @@
 
 <br />
 
-## システム構成図
+## 使い方
+AMEではslackとスプレッドシートを使って出席を行います。
 
-![システム構成図](/docs/img/system-architecture/system-architecture_1.1.png)
+slackの教科ごとのチャンネルで出席と入力することで出席になります。
+
+出席状況は時間内・遅刻・欠席の三つに分けられており、シートに値が出力される。
+
+時間内であれば２、遅刻は１、17時までに出席がない場合は欠席となり０がシートに出力されます。
+
+
 
 <br />
 
-## ER図
+## インストール
+以下のURLでSlackのダウンロードを行う
 
-![ER図](/docs/img/entity-relationship-diagram/entity-relationship-diagram_1.6.png)
+Windows : https://slack.com/intl/ja-jp/downloads/windows
+
+Mac : https://slack.com/intl/ja-jp/downloads/mac
+
+Linux: https://slack.com/intl/ja-jp/downloads/linux
+
+Android : https://slack.com/intl/ja-jp/downloads/android
+
+iOS : https://slack.com/intl/ja-jp/downloads/ios
 
 <br />
 

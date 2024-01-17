@@ -55,6 +55,7 @@ slackの教科ごとのチャンネルで出席と入力することで出席に
 <br />
 
 ## インストール
+### ユーザーの場合
 以下のURLでSlackのダウンロードを行う
 
 Windows : https://slack.com/intl/ja-jp/downloads/windows
@@ -67,13 +68,21 @@ Android : https://slack.com/intl/ja-jp/downloads/android
 
 iOS : https://slack.com/intl/ja-jp/downloads/ios
 
+### 管理者の場合
+
+#### slackのインストールと設定
+ユーザーと同じくslackをダウンロードし、ワークスペースを作成後、使用するチャンネルとユーザーを追加
+
+#### slackappの設定
+slackのメニューからapp設定に移動
+
 <br />
 
 ## 今後の展望
 
 <br />
 
-## FAQ
+## よくある質問/FAQ
 
 <br />
 

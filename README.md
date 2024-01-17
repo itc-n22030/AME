@@ -74,8 +74,19 @@ iOS : https://slack.com/intl/ja-jp/downloads/ios
 ユーザーと同じくslackをダウンロードし、ワークスペースを作成後、使用するチャンネルとユーザーを追加
 
 #### slackappの設定
-slackのメニューからapp設定に移動
-![slack設定１](/slack_settings/img/slack_app_settings1.png)
+1 slackのメニューからapp設定に移動
+![slack設定１](/slack_settings/img/slack_app_settings1_1.png)
+
+
+2 slackAppdirectoryに移動したら右上のbuildに移動
+![slack設定2](/slack_settings/img/slack_app_settings2.png)
+
+
+3 Yourappsに移動したらcreateNewappを選択
+
+
+4 上のFrom scratchを選択
+![slack設定4](/slack_settings/img/slack_app_settings4.png)
 
 <br />
 

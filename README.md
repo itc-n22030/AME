@@ -7,18 +7,7 @@
 
 <br />
 
-## サービスへの想い
-
-
-
-<br />
-
-## アプリケーションのイメージ
-![アプリケーションのイメージ](/docs/img/app-view/app-view_1.1.gif)
-
-<br />
-
-## 機能一覧
+## 主な機能一覧
 | 管理者画面 |　確認画面 |
 | ---- | ---- |
 | ![管理者画面](/image/出席確認.png) | ![確認画面](/image/フォルダ.png) |
@@ -48,13 +37,7 @@
 | OS                | Windows11                                            |
 | frontend          | HTML/CSS, TypeScript                                 |
 | Backend           | TypeScript, Node.js                                  |
-| Infrastructure    | GCP                     |
-| Database          | MySQL                                                |
-| Monitoring        | Sentry, UptimeRobot                                  |
-| Environment setup | Docker                                               |
-| CI/CD             | GitHub Actions                                       |
-| Design            | Figma, Lucid                                         |
-| etc.              | Stylelint, ESLint, Prettier, Husky Jest, Git, GitHub |
+| Infrastructure    | GCP                     　　　　　　　　　　　　　　　　|
 
 <br />
 
@@ -88,11 +71,18 @@ iOS : https://slack.com/intl/ja-jp/downloads/ios
 
 ## 今後の展望
 
-本プロダクトは4つのフェーズに分けて、段階的に開発を進めています。  
-現在はフェーズ1として、請求書の作成・発行機能の開発をしています。  
-将来的には書類作成業務から経理・会計業務までを一元管理できる、統合的なソリューションの実現を目指しています。  
+<br />
 
-- フェーズ1：新しい税制に対応した請求書を、Web上で作成・発行できるアプリケーションを開発する。
-- フェーズ2：発注書・見積書・納品書を、Web上で作成・発行できる機能を追加する。
-- フェーズ3：お金や取引に関するデータをWeb上で確認できる機能を追加する。
-- フェーズ4：取引に関するデータを、会計ソフトに効率的に取り込める機能を追加する。
+## FAQ
+
+<br />
+
+## お問い合わせ
+email n22030@std.it-college.ac.jp
+
+<br />
+
+
+## 
+Copyright (c) 2024 Masato Yonaha
+<br />

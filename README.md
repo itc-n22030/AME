@@ -75,6 +75,7 @@ iOS : https://slack.com/intl/ja-jp/downloads/ios
 
 #### slackappの設定
 slackのメニューからapp設定に移動
+![slack設定１](/slack_settings/img/slack_app_settings1.png)
 
 <br />
 

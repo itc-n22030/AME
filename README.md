@@ -1,3 +1,12 @@
+# 出席管理アプリ　AME仕様書
+制作　卒業企画チーム_HMN
+
+メンバー
+
+HIMANSHU GAUTAM　武藤ショーン凪翔　與那覇祥人
+
+<br/>
+
 ![ヘッダー画像](/AME.png)
 
 <br />
@@ -6,6 +15,16 @@
 
 
 <br />
+
+## 使い方
+AMEではslackとスプレッドシートを使って出席を行います。
+
+slackの教科ごとのチャンネルで出席と入力することで出席になります。
+
+出席状況は時間内・遅刻・欠席の三つに分けられており、シートに値が出力されます。
+
+時間内であれば２、遅刻は１、17時までに出席がない場合は欠席となり０がシートに出力されます。
+
 
 ## 主な機能一覧
 | 管理者画面 |　確認画面 |
@@ -41,37 +60,9 @@
 
 <br />
 
-## 使い方
-AMEではslackとスプレッドシートを使って出席を行います。
 
-slackの教科ごとのチャンネルで出席と入力することで出席になります。
-
-出席状況は時間内・遅刻・欠席の三つに分けられており、シートに値が出力されます。
-
-時間内であれば２、遅刻は１、17時までに出席がない場合は欠席となり０がシートに出力されます。
-
-
-
-<br />
-
-## インストール
-### ユーザーの場合
-以下のURLでSlackのダウンロードを行う
-
-Windows : https://slack.com/intl/ja-jp/downloads/windows
-
-Mac : https://slack.com/intl/ja-jp/downloads/mac
-
-Linux: https://slack.com/intl/ja-jp/downloads/linux
-
-Android : https://slack.com/intl/ja-jp/downloads/android
-
-iOS : https://slack.com/intl/ja-jp/downloads/ios
-
-### 管理者の場合
-
-#### slackのインストールと設定
-ユーザーと同じくslackをダウンロードし、ワークスペースを作成後、使用するチャンネルとユーザーを追加
+#### slackの設定
+ブラウザもしくはアプリでslackの登録　※スマホからブラウザは利用できません。
 
 #### slackappの設定
 ##### 1 slackのメニューからapp設定に移動
@@ -88,11 +79,57 @@ iOS : https://slack.com/intl/ja-jp/downloads/ios
 ##### 4 上のFrom scratchを選択
 ![slack設定4](/slack_settings/img/slack_app_settings4.png)
 
+
+##### 5 アプリ名と使用するワークスペースを選択し、作成
+![slack設定5](/slack_settings/img/slack_app_settings5.png)
+
+
+##### 6 OAuth & Permissionsでボットとユーザーのトークンスコープの追加
+追加するトークンスコープ一覧
+
+##### app_mentions:read:
+
+bot が直接メンションされたメッセージを取得する権限です。この権限がないと、ボットがメンションされたかどうかを確認できません。
+
+##### channels:history:
+
+パブリックチャンネル内のメッセージとコンテンツを表示する権限です。Google_Sheet_bot が追加されたパブリックチャンネルでのメッセージを取得できます。
+
+##### channels:read:
+
+ワークスペース内のパブリックチャンネルに関する基本情報を表示する権限です。チャンネルの一覧やメタデータなどを取得できます。
+
+##### chat:write:
+
+bot としてメッセージを送信する権限です。Slack上でのメッセージの送信に使用されます。
+
+##### im:history:
+
+bot が追加されたダイレクトメッセージ内のメッセージとコンテンツを表示する権限です。
+
+##### im:read:
+
+ダイレクトメッセージに関する基本情報を表示する権限です。ダイレクトメッセージの一覧やメタデータなどを取得できます。
+
+##### im:write:
+
+ユーザーとのダイレクトメッセージを開始する権限です。
+
+##### reactions:read:
+
+bot が追加されたチャンネルや会話での絵文字リアクションとそれに関連するコンテンツを表示する権限です。
+
+##### users.profile:read:
+
+ワークスペース内の人々のプロファイルに関する詳細情報を表示する権限です。
+
+##### users:read:
+
+ワークスペース内の人々の一覧を表示する権限です。
+
+
 <br />
 
-## 今後の展望
-
-<br />
 
 ## よくある質問/FAQ
 
@@ -105,5 +142,5 @@ email n22030@std.it-college.ac.jp
 
 
 ## 
-Copyright (c) 2024 Masato Yonaha
+Copyright (c) 2024 卒業企画チーム_HMN
 <br />

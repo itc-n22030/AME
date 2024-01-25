@@ -151,21 +151,27 @@ bot が追加されたチャンネルや会話での絵文字リアクション�
 https://nodejs.org/en/download
 
 2 ダウンロードできたらインストールファイルをクリックしてインストーラーを開きます。
-![node_setup1](/slack_settings/)
 
 3 《Next》ボタンをクリックします。
 
 4 《I accept the terms in the Licence Agreement》にチェックを入れて、《Next》に進む。
+![node_setup1](/node_setup/img/node_setup1.png)
 
 5 《Next》に進む。（必要に応じてインストールフォルダを指定）
+![node_setup2](/node_setup/img/node_setup2.png)
 
 6 デフォルトの状態で《Next》をクリックします。
+![node_setup3](/node_setup/img/node_setup3.png)
 
-7 《Install》をクリックします。
+7 今回、ネイティブアドオンのビルドしないのでそのまま《Next》をクリックします。
+![node_setup4](/node_setup/img/node_setup4.png)
 
-8 うまくインストールができたら《finish》をクリックし、終了します。
+8 《Install》をクリックします
+![node_setup5](/node_setup/img/node_setup5.png)
 
+9 成功したら《finish》を押し、終了。
 
+10 Windows PowerShellを開き、node --versionを入力してインストールしたバージョンが確認できたらインストールは完了です。
 
 
 

@@ -191,7 +191,7 @@ DBに以下のようにslackのチャンネルID、スプレッドシートの�
 
 ## 実行手順
 
-### プロジェクトフォルダの.envに以下の内容を書き込む
+#### プロジェクトフォルダの.envに以下の内容を書き込む
 ・SLACK_SIGNING_SECRET=《slackのsinging_secret》
 
 ・SLACK_BOT_TOKEN=《slackのbot_token》
@@ -207,19 +207,23 @@ DBに以下のようにslackのチャンネルID、スプレッドシートの�
 ・DB_DATABASE=《データベース名》
 
 
-### プロジェクトフォルダでnode .\slack.jを実行(ポート:3001)
+#### プロジェクトフォルダでnode .\slack.jを実行(ポート:3001)
 
-### 次にngrokを開き、ngrok http 3001を実行
+#### 次にngrokを開き、ngrok http 3001を実行
 
-### Forwarding にあるURLをコピーし、slackのEvent Subscriptionsに移動
+#### Forwarding にあるURLをコピーし、slackのEvent Subscriptionsに移動
 
-### Event SubscriptionsにあるRequest URLに先ほどのURLを貼り付けて、行末に/slack/eventsを付け加える
+#### Event SubscriptionsにあるRequest URLに先ほどのURLを貼り付けて、行末に/slack/eventsを付け加える
 
-### slackのチャンネルで出席と入力し、メッセージの確認とシートへの出力が確認できたら成功です。
+#### slackのチャンネルで出席と入力し、メッセージの確認とシートへの出力が確認できたら成功です。
 
 <br />
 
-## よくある質問/FAQ
+## よくある質問
+
+Q　リモート授業の場合、不正対策はありますか？
+
+A　はい。GCPのCloud IAPやVPC ネットワークでファイアウォール ルールを設定をすることで特定のネットワークからのみアクセス可能にできます。
 
 <br />
 

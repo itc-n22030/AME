@@ -167,6 +167,62 @@ DBに以下のようにslackのチャンネルID、スプレッドシートの�
 ### Googleスプレッドシートはフォルダにあるテンプレを参考にして作成
 
 <br />
+
+## GCPの登録
+
+### 登録には以下の登録が必須です
+・Googleアカウント
+
+・クレジットカード
+
+#### Google Cloud Platformにアクセスし、Googleアカウントで登録します。
+
+#### 登録完了後、GCPのコンソール画面が表示されます 
+
+#### 《アカウントを作成》 をクリックします。
+
+#### GCPプロジェクトの作成
+
+#### 「APIとサービス」 > 「ダッシュボード」に移動し、Google Sheets APIを有効にする
+
+#### 「APIとサービス」 > 「認証情報」に移動し、「認証情報を作成」ボタンをクリックし、サービスアカウントキーを作成します。
+
+#### サービスアカウントに適切な権限（Google Sheets編集者など）を付与します。
+
+#### JSON形式でキーをダウンロードします。
+
+<br />
+
+## 実行手順
+
+### プロジェクトフォルダの.envに以下の内容を書き込む
+・SLACK_SIGNING_SECRET=《slackのsinging_secret》
+
+・SLACK_BOT_TOKEN=《slackのbot_token》
+
+・GOOGLE_SHEETS_API_KEY_PATH=《ダウンロードしたGCPのJSONキーのパス》
+
+・DB_HOST=《ホスト》
+
+・DB_USER=《ユーザー名》
+
+・DB_PASSWORD=《パスワード》
+
+・DB_DATABASE=《データベース名》
+
+
+### プロジェクトフォルダでnode .\slack.jを実行(ポート:3001)
+
+### 次にngrokを開き、ngrok http 3001を実行
+
+### Forwarding にあるURLをコピーし、slackのEvent Subscriptionsに移動
+
+### Event SubscriptionsにあるRequest URLに先ほどのURLを貼り付けて、行末に/slack/eventsを付け加える
+
+### slackのチャンネルで出席と入力し、メッセージの確認とシートへの出力が確認できたら成功です。
+
+<br />
+
 ## よくある質問/FAQ
 
 <br />

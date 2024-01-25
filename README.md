@@ -60,6 +60,17 @@ slackの教科ごとのチャンネルで出席と入力することで出席に
 
 <br />
 
+## 前提条件
+・Node.js v20.10.0 以降
+・npm v10.2.3 以降
+・ngrok v3.4.0 以降
+
+
+## インストール
+このリポジトリのクローンを作成します
+
+実行してnpm install依存関係をインストールします。
+
 
 #### slackの設定
 ブラウザもしくはアプリでslackの登録
@@ -143,39 +154,10 @@ bot が追加されたチャンネルや会話での絵文字リアクション�
 
 <br />
 
-### 実行環境の設定
+### DBの設定
 
-#### node.jsのインストール
-
-##### 1 下記のURLからOSにあったnode.jsをインストール
-https://nodejs.org/en/download
-
-##### 2 ダウンロードできたらインストールファイルをクリックしてインストーラーを開きます。
-
-##### 3 《Next》ボタンをクリックします。
-
-##### 4 《I accept the terms in the Licence Agreement》にチェックを入れて、《Next》に進む。
-![node_setup1](/node_setup/img/node_setup1.png)
-
-##### 5 《Next》に進む。（必要に応じてインストールフォルダを指定）
-![node_setup2](/node_setup/img/node_setup2.png)
-
-##### 6 デフォルトの状態で《Next》をクリックします。
-![node_setup3](/node_setup/img/node_setup3.png)
-
-##### 7 今回、ネイティブアドオンのビルドしないのでそのまま《Next》をクリックします。
-![node_setup4](/node_setup/img/node_setup4.png)
-
-##### 8 《Install》をクリックします
-![node_setup5](/node_setup/img/node_setup5.png)
-
-##### 9 成功したら《finish》を押し、終了。
-
-##### 10 Windows PowerShellを開き、node --versionを入力してインストールしたバージョンが確認できたらインストールは完了です。
-
-
-<br />
-
+DBに以下のようにslackのチャンネルID、スプレッドシートのシートID、シート名を追加する
+![DB_settings]()
 
 ## よくある質問/FAQ
 

@@ -57,12 +57,15 @@ slackの教科ごとのチャンネルで出席と入力することで出席に
 | frontend          | HTML/CSS, TypeScript                                 |
 | Backend           | TypeScript, Node.js                                  |
 | Infrastructure    | GCP                     　　　　　　　　　　　　　　　　|
+| Database          | MySQL                   　　　　　　　　　　　　　　　　|                                                
 
 <br />
 
 ## 前提条件
 ・Node.js v20.10.0 以降
+
 ・npm v10.2.3 以降
+
 ・ngrok v3.4.0 以降
 
 
@@ -158,6 +161,9 @@ bot が追加されたチャンネルや会話での絵文字リアクション�
 
 DBに以下のようにslackのチャンネルID、スプレッドシートのシートID、シート名を追加する
 ![DB_settings](DB_setting/img/DB_settings.png)
+
+<br />
+
 
 ## よくある質問/FAQ
 

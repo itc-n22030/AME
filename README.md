@@ -157,7 +157,7 @@ bot が追加されたチャンネルや会話での絵文字リアクション�
 ### DBの設定
 
 DBに以下のようにslackのチャンネルID、スプレッドシートのシートID、シート名を追加する
-![DB_settings](DB_setting\img\DB_settings.png)
+![DB_settings](DB_setting/img/DB_settings.png)
 
 ## よくある質問/FAQ
 

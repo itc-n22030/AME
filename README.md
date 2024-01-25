@@ -164,9 +164,9 @@ DBに以下のようにslackのチャンネルID、スプレッドシートの�
 
 <br />
 
-### Googleスプレッドシートは以下のテンプレを参考にして作成
-![sheet_template](Google_sheet_template/)
+### Googleスプレッドシートはフォルダにあるテンプレを参考にして作成
 
+<br />
 ## よくある質問/FAQ
 
 <br />

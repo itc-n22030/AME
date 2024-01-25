@@ -151,10 +151,11 @@ bot が追加されたチャンネルや会話での絵文字リアクション�
 https://nodejs.org/en/download
 
 2 ダウンロードできたらインストールファイルをクリックしてインストーラーを開きます。
+![node_setup1](/slack_settings/)
 
-3 <<Next>>ボタンをクリックします。
+3 《Next》ボタンをクリックします。
 
-4 <<I accept the terms in the Licence Agreement>>にチェックを入れて、<<Next>>に進む。
+4 《I accept the terms in the Licence Agreement》にチェックを入れて、《Next》に進む。
 
 5 《Next》に進む。（必要に応じてインストールフォルダを指定）
 
@@ -162,7 +163,7 @@ https://nodejs.org/en/download
 
 7 《Install》をクリックします。
 
-8 うまくインストールができたら<<finish>>をクリックし、終了します。
+8 うまくインストールができたら《finish》をクリックし、終了します。
 
 
 

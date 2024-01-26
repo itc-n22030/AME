@@ -78,22 +78,22 @@ slackの教科ごとのチャンネルで出席と入力することで出席に
 ##### 1 slackのメニューからapp設定に移動
 ![slack設定１](/slack_settings/img/slack_app_settings1_1.png)
 
-
+------------
 ##### 2 slackAppdirectoryに移動したら右上のbuildに移動
 ![slack設定2](/slack_settings/img/slack_app_settings2.png)
 
-
+------------
 ##### 3 Yourappsに移動したらcreateNewappを選択
 
-
+------------
 ##### 4 上のFrom scratchを選択
 ![slack設定4](/slack_settings/img/slack_app_settings4.png)
 
-
+------------
 ##### 5 アプリ名と使用するワークスペースを選択し、作成
 ![slack設定5](/slack_settings/img/slack_app_settings5.png)
 
-
+------------
 ##### 6 OAuth & Permissionsでボットとユーザーのトークンスコープの追加
 追加するトークンスコープ一覧
 
@@ -103,6 +103,7 @@ slackの教科ごとのチャンネルで出席と入力することで出席に
 
 bot が直接メンションされたメッセージを取得する権限です。この権限がないと、ボットがメンションされたかどうかを確認できません。
 
+------------
 ##### channels:history:
 
 パブリックチャンネル内のメッセージとコンテンツを表示する権限です。Google_Sheet_bot が追加されたパブリックチャンネルでのメッセージを取得できます。

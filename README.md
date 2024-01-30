@@ -101,8 +101,27 @@ Google SheetsとMySQLとの連携を管理し、アプリの設定やシート�
 
 Google Sheets APIへのアクセスを許可するためのファイル
 
-・
+・signup.html
 
+生徒が新しいアカウントを作成するためのサインアップページ
+
+・login.html
+
+生徒用ログインページ
+
+・home.html
+
+管理者用ページ
+
+・create.html
+
+シート作成ページ
+
+・delete.html
+
+シート削除ページ
+
+<br />
 
 ## 前提条件
 ・Node.js v20.10.0 以降

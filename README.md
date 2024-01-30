@@ -68,7 +68,6 @@ project
 │   server.js
 │   sheet.js
 │   slack.js
-│   test.js
 │
 ├── login
 │   │   login.html
@@ -84,6 +83,26 @@ project
     │   script.js
     │   style.css
 ```
+
+## ファイル説明
+・slack.js
+
+Slackボットのメインの処理を実行するファイル
+
+・sheet.js
+
+Google SheetsとMySQLとの連携を管理し、アプリの設定やシートのデータ取得・更新に関するファイル
+
+・server.js
+
+シート情報の取得、シートの削除と作成などの機能を管理するファイル
+
+・authorize.js
+
+Google Sheets APIへのアクセスを許可するためのファイル
+
+・
+
 
 ## 前提条件
 ・Node.js v20.10.0 以降
@@ -185,8 +204,15 @@ bot が追加されたチャンネルや会話での絵文字リアクション�
 ### DBの設定
 
 DBに以下のようにslackのチャンネルID、スプレッドシートのシートID、シート名を追加する
-![DB_settings](DB_setting/img/DB_settings.png)
-
+```
+mysql> SELECT * FROM sheets;
++----+-------------+----------------------------------------------+--------------+
+| id | channelId   | sheetId                                      | sheetName    |
++----+-------------+----------------------------------------------+--------------+
+|  1 | C06772JMJ9Y | 1tSXSgQHQ-y0cDM6BfOLCt8rTwBy48dNYD-8hnT1IWkU | Database I   |
+|  2 | C067JQKRBKQ | 1tSXSgQHQ-y0cDM6BfOLCt8rTwBy48dNYD-8hnT1IWkU | 月間出席管理  |
++----+-------------+----------------------------------------------+--------------+
+```
 <br />
 
 ### Googleスプレッドシートはフォルダにあるテンプレを参考にして作成
@@ -221,20 +247,21 @@ DBに以下のようにslackのチャンネルID、スプレッドシートの�
 ## 実行手順
 
 #### プロジェクトフォルダの.envに以下の内容を書き込む
-・SLACK_SIGNING_SECRET=《slackのsinging_secret》
-
-・SLACK_BOT_TOKEN=《slackのbot_token》
-
-・GOOGLE_SHEETS_API_KEY_PATH=《ダウンロードしたGCPのJSONキーのパス》
-
-・DB_HOST=《ホスト》
-
-・DB_USER=《ユーザー名》
-
-・DB_PASSWORD=《パスワード》
-
-・DB_DATABASE=《データベース名》
-
+```
+SLACK_SIGNING_SECRET=《slackのsinging_secret》
+SLACK_BOT_TOKEN=《slackのbot_token》
+GOOGLE_SHEETS_API_KEY_PATH=《ダウンロードしたGCPのJSONキーのパス》
+DB_HOST=《ホスト》
+DB_USER=《ユーザー名》
+DB_PASSWORD=《パスワード》
+DB_DATABASE=《データベース名》
+```
+#### publicフォルダにあるscript.jsの以下の部分を書き換える
+```
+function redirectToGoogleSheet() {
+    window.location.href = 《'実際の管理者のdriveにある出席管理用のフォルダのURLに書き換える'》;
+}
+```
 
 #### プロジェクトフォルダでnode .\slack.jを実行(ポート:3001)
 
@@ -250,18 +277,14 @@ DBに以下のようにslackのチャンネルID、スプレッドシートの�
 
 ## よくある質問
 
-Q　リモート授業の場合、不正対策はありますか？
+**Q:** リモート授業の場合、不正対策はありますか？
 
-A　はい。GCPのCloud IAPやVPC ネットワークでファイアウォール ルールの設定をすることで特定のネットワークからのみアクセス可能にできます。
-
-<br />
+**A:** はい。GCPのCloud IAPやVPC ネットワークでファイアウォール ルールの設定をすることで特定のネットワークからのみアクセス可能にできます。
 
 ## お問い合わせ
+
 email n22030@std.it-college.ac.jp
 
-<br />
+---
 
-
-## 
 Copyright (c) 2024 卒業企画チーム_HMN
-<br />

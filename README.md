@@ -61,27 +61,27 @@ slackの教科ごとのチャンネルで出席と入力することで出席に
 ```
 project
 │   .env
-│   authorize.js
-│   my-project-dakoku~.json(GCPのアカウントキー)
-│   package-lock.json
-│   package.json
-│   server.js
-│   sheet.js
-│   slack.js
-│
+│——— authorize.js
+│——— package-lock.json
+│——— package.json
+│——— server.js
+│——— sheet.js
+│——— slack.js
+├──key
+│   │——— my-project-dakoku~.json(GCPのアカウントキー)
 ├── login
-│   │   login.html
-│   │   signup.html
+│   │——— login.html
+│   │——— signup.html
 │
 ├── node_modules
 │   │   [Node.js モジュールたち...]
 │
 └── public
-    │   create.html
-    │   delete.html
-    │   home.html
-    │   script.js
-    │   style.css
+    │——— create.html
+    │——— delete.html
+    │——— home.html
+    │——— script.js
+    │——— style.css
 ```
 
 ## ファイル説明

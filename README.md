@@ -325,7 +325,7 @@ function redirectToGoogleSheet() {
 
 [https://qiita.com/yfujii01/items/41c15d885830deea8ed1]
 
-#### VMインスタンスの作成
+### VMインスタンスの作成
 
 GCPのメニューからCompute EngineのVMインスタンスに移動し、Compute Engine APIを有効にする
 
@@ -347,7 +347,7 @@ IDとAPIへのアクセスはデフォルトで行う。
 
 インスタンスを作成する。
 
-#### インストールと設定
+### インストールと設定
 
 うまく作成できたらブラウザウィンドウで開くを押し、インスタンスに接続する。
 
@@ -365,13 +365,13 @@ login.jsやserver.jsのlocalhostを外部IPなどに書き換える
 
 成功すれば、出席管理が表示されます。
 
-#### ドメインの作成
+### ドメインの作成
 
 Google Cloud DNSやGoogle Domains、他のドメイン登録サービスを使用する。
 
 どれを利用するかはお好みで
 
-#### Let's Encrypt でSSL証明書を作成
+### Let's Encrypt でSSL証明書を作成
 
 cerbot-autoをインストールします
 
@@ -409,13 +409,13 @@ httpをhttpsにリダイレクトするかの設定
 cerbot-autoのおかげでnginxの設定が書き換えられ、https://【ドメイン名】で接続が行えるようになっています。
 
 
-#### Nginxのインストールを行う。
+### Nginxのインストールを行う。
 
 ```
 $ sudo apt install nginx -y
 ```
 
-#### Nginxを起動
+### Nginxを起動
 
 ```
 $ sudo service nginx start
@@ -423,7 +423,7 @@ $ sudo service nginx start
 
 「http://【外部IP】:3000」で接続します。
 
-#### Nginxの設定を修正
+### Nginxの設定を修正
 
 ```
 $ sudo nano /etc/nginx/sites-available/default

@@ -55,7 +55,7 @@ slackの教科ごとのチャンネルで出席と入力することで出席に
 
 <br />
 
-## 使用環境
+## 開発環境
 
 | Category          | Technology Stack                                     |
 | ----------------- | --------------------------------------------------   |
@@ -63,7 +63,8 @@ slackの教科ごとのチャンネルで出席と入力することで出席に
 | frontend          | HTML/CSS, TypeScript                                 |
 | Backend           | TypeScript, Node.js                                  |
 | Infrastructure    | GCP                     　　　　　　　　　　　　　　　　|
-| Database          | MySQL                   　　　　　　　　　　　　　　　　|                                                
+| Database          | MySQL                   　　　　　　　　　　　　　　　　|
+
 
 <br />
 
@@ -133,18 +134,17 @@ Google Sheets APIへのアクセスを許可するためのファイル
 
 <br />
 
-## 前提条件
-・Node.js v20.10.0 以降
-
-・npm v10.2.3 以降
-
-・ngrok v3.4.0 以降（テスト段階で必要）
-
 
 ## インストール
 このリポジトリのクローンを作成します
 
 実行してnpm installで依存関係をインストールします。
+
+・Node.js v20.10.0 以降
+
+・npm v10.2.3 以降
+
+・ngrok v3.4.0 以降（テスト段階で必要）
 
 
 #### slackの設定
@@ -243,6 +243,7 @@ mysql> SELECT * FROM sheets;
 +----+-------------+----------------------------------------------+--------------+
 ```
 
+ユーザーログイン用のユーザー名、パスワード
 ```
 mysql> SELECT * FROM users;
 +----+----------+----------+
@@ -314,12 +315,160 @@ function redirectToGoogleSheet() {
 
 <br />
 
+## サーバー構築
+
+ローカルでの動作がうまくいったら次にGCPのAppEngineを使ってサーバーを構築していきます。
+
+今回はGCPの無料枠を使って行っていきます。
+
+参考サイト
+
+[https://qiita.com/yfujii01/items/41c15d885830deea8ed1]
+
+#### VMインスタンスの作成
+
+GCPのメニューからCompute EngineのVMインスタンスに移動し、Compute Engine APIを有効にする
+
+VMインスタンスの上部にあるインスタンス作成をクリック
+
+名前を決め、リージョンとゾーンは無料枠で使えるus-west1とus-west1-bを利用します。
+
+マシンタイプは「micro (共有 vCPU x 1)」を利用します。
+
+OSはUbuntuを選択。
+
+ブートディスクのサイズは30GBまでは無料枠なので、30GBで設定。またデフォルトで指定されているバランス型永久ディスクは無料枠外なので標準永久ディスクに切り替える。
+
+IDとAPIへのアクセスはデフォルトで行う。
+
+ファイアウォールを設定で、HTTPとHTTPSを許可し、インスタンスを作成する。
+
+#### インストールと動作確認
+
+うまく作成できたらブラウザウィンドウで開くを押し、インスタンスに接続する。
+
+ssh接続で入り、apt updateとnode、nom、gitなどのインストールを行う。
+
+gitからリポジトリをクローンし、必要なライブラリなどをプロジェクトディレクトリにインストールする。
+
+動作確認の為、server.jsを実行
+
+「http://【外部IP】:3000」で接続します。
+
+成功すれば、出席管理が表示されます。
+
+#### ドメインの作成
+
+Google Cloud DNSやGoogle Domains、他のドメイン登録サービスを使用する。
+
+どれを利用するかはお好みで
+
+#### Let's Encrypt でSSL証明書を作成
+
+cerbot-autoをインストールします
+
+```
+$ wget https://dl.eff.org/certbot-auto
+
+$ chmod a+x certbot-auto
+```
+cerbot-autoを実行
+
+```
+$ ./certbot-auto
+```
+
+Emailを入力を行い、利用規約を確認する。
+
+[https://letsencrypt.org/documents/LE-SA-v1.2-November-15-2017.pdf]
+
+確認後「A」を入力します。
+
+Emailへのお知らせを選択
+
+SSL証明書を発行したいドメインを入力
+
+httpをhttpsにリダイレクトするかの設定
+
+1 リダイレクトしない　２リダイレクトする
+
+証明書の発行に成功すると、それぞれ以下にファイルが作成されたようです。
+
+証明書　/etc/letsencrypt/live/ドメイン名/fullchain.pem
+
+秘密鍵　/etc/letsencrypt/live/ドメイン名/privkey.pem
+
+cerbot-autoのおかげでnginxの設定が書き換えられ、https://【ドメイン名】で接続が行えるようになっています。
+
+
+#### Nginxのインストールを行う。
+
+```
+$ sudo apt install nginx -y
+```
+
+#### Nginxを起動
+
+```
+$ sudo service nginx start
+```
+
+「http://【外部IP】:3000」で接続します。
+
+#### Nginxの設定を修正
+
+```
+$ sudo nano /etc/nginx/sites-available/default
+
+server {
+    listen 80;
+
+    server_name example.com; # 自分のドメインに置き換える
+
+    location /login {
+        proxy_pass http://localhost:3003; # login.jsが動作するポートに合わせて変更
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    location /slack {
+        proxy_pass http://localhost:3002; # slack.jsが動作するポートに合わせて変更
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    location /server {
+        proxy_pass http://localhost:3001; # server.jsが動作するポートに合わせて変更
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
+$ sudo systemctl restart nginxで設定を保存
+
+```
+
+https://【ドメイン名】でログイン画面や管理画面が表示されれば成功です。
+
+お疲れ様でした！
+
+<br />
+
 ## よくある質問
 
 **Q:** 授業に出なくても出席ができますが、不正対策はありますか？
 
 **A:** はい。GCPのCloud IAPやVPC ネットワークでファイアウォール ルールの設定をすることで特定のネットワークからのみアクセス可能にできます。
-
+<br />
 ## 既存のバグ
 
 #### 時間外の出席入力の際にエラー　現在対応中

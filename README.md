@@ -59,7 +59,6 @@ slackの教科ごとのチャンネルで出席と入力することで出席に
 
 | Category          | Technology Stack                                     |
 | ----------------- | --------------------------------------------------   |
-| OS                | Windows11                                            |
 | frontend          | HTML/CSS, TypeScript                                 |
 | Backend           | TypeScript, Node.js                                  |
 | Infrastructure    | GCP                     　　　　　　　　　　　　　　　　|

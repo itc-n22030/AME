@@ -99,43 +99,43 @@ project
 
 ### slackボット、スプレッドシートの処理・MySQLとの連携
 
-・slack.js
+#### ・slack.js
 
 Slackボットのメインの処理を担当し、Slack APIとの通信やメッセージの処理を行います。
 
-・sheet.js
+#### ・sheet.js
 
 Google SheetsとMySQLとの連携を担当し、スプレッドシートからのデータ取得や更新を行います。
 
-・authorize.js
+#### ・authorize.js
 
  Google Sheets APIへのアクセスを許可するためのファイルで、認証トークンの取得や認証フローの制御などを行います。
 
 ### 管理者用の出席管理画面の設定
 
-・server.js
+#### ・server.js
 
 : 管理者用の出席管理画面を設定し、シートの閲覧や登録、削除などのDBの処理を行う。
 
-・home.html
+#### ・home.html
 
 出席管理やシートの操作を行うための管理者用ページ
 
-・create.html
+#### ・create.html
 
 管理者がDBにslackのチャンネルID、シート情報を登録するためのページ
 
-・delete.html
+#### ・delete.html
 
 管理者がDBにある既存のslackのチャンネルID、シート情報を削除するためのページ
 
 ### 学生用のログイン処理・シート確認
 
-・login.js
+#### ・login.js
 
 学生用のログインとシート確認の処理をし、学生がログインして自身のシートを確認するための機能
 
-・login.html
+#### ・login.html
 
 学生がログインするためのページで、ユーザー名とパスワードを入力後、閲覧したいシートの選択を行う。
 

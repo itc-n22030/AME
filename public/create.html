@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>作成画面</title>
+</head>
+<body>
+    <header>
+    <h1>作成画面</h1>
+    </header>
+
+    <div id="createMessage"></div>
+
+    <form action="/create" method="post">
+        <ul>
+        <li class="create_ul"><label for="channelId">チャンネルID</label></li>
+        <li class="create_ul"><input type="text" id="channelId" name="channelId" required><br></li>
+
+        <li class="create_ul"><label for="sheetId">シートID</label></li>
+        <li class="create_ul"><input type="text" id="sheetId" name="sheetId" required><br></li>
+        <li class="create_ul"><label for="sheetName">シート名</label></li>
+       <li class="create_ul"><input type="text" id="sheetName" name="sheetName" required><br></li>
+        <li class = 'create_ul'><input type="submit" value="作成"></li>
+        <a href="/home">ホームに戻る</a>
+        </ul>
+    </form>
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,31 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    /* margin: 20px; */
+    text-align: center;
+    margin: auto;
+}
+
+h1 {
+    /* margin-bottom: 20px; */
+    margin: auto;
+    font-size: 55px;
+}
+
+button {
+    padding: 20px;
+    margin: 24px;
+    font-size: 40px;
+    cursor: pointer;
+}
+header {
+    color: #ffffff;
+    background-color: rgb(47, 138, 212)
+}
+ul {
+    list-style: none;
+}
+.create_ul {
+    margin: 10px;
+    
+}

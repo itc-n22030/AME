@@ -1,0 +1,38 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:server": "node server.js",
+    "start:slack": "node slack.js",
+    "start:login": "node .\\login\\login.js  ",
+    "start:all": "npm-run-all --parallel start:server start:slack start:login"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/secret-manager": "^5.0.1",
+    "@slack/bolt": "^3.17.0",
+    "@slack/events-api": "^3.0.1",
+    "axios": "^1.6.2",
+    "bcrypt": "^5.1.1",
+    "body-parse": "^0.1.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "cron": "^3.1.6",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.18.0",
+    "googleapis": "^128.0.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.9.1",
+    "node-schedule": "^2.1.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
+  }
+}

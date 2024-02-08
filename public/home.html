@@ -1,0 +1,64 @@
+
+  <!-- <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Sheet</title>
+</head>
+<body>
+  <h1>Add Sheet</h1>
+  <form id="addSheetForm">
+    <label for="sheetName">Sheet Name:</label>
+    <input type="text" id="sheetName" name="sheetName" required>
+    <button type="button" onclick="addSheet()">Add Sheet</button>
+  </form>
+
+  <script>
+    async function addSheet() {
+      const sheetName = document.getElementById('sheetName').value;
+
+      try {
+        const response = await fetch('http://localhost:3002/addSheet', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ subjectSheetName: sheetName }),
+        });
+
+        const data = await response.json();
+        if (data.success) {
+          alert('Sheet name added successfully!');
+        } else {
+          alert('Failed to add sheet name. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error adding sheet name:', error.message);
+      }
+    }
+  </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management System</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>出席管理</h1>
+  </header>
+  <ul>
+    <li><button onclick="redirectToGoogleSheet()">確認</button></li>
+    <li><button onclick="createAttendance()">作成</button></li>
+    <li><button onclick="deleteAttendance()">削除</button></li>
+    </ul>
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+

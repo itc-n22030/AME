@@ -10,7 +10,7 @@ const authorize = require('./authorize');
 const { getSheetInfo, dbConfig } = require('./sheet'); // dbConfig を追加
 
 const timeSlots = [
-  { name: '1コマ目', startTime: '09:30', endTime: '11:00', lateTime: '09:40', attendanceLimit: 1 },
+  { name: '1コマ目', startTime: '00:30', endTime: '11:00', lateTime: '09:40', attendanceLimit: 1 },
   { name: '2コマ目', startTime: '11:10', endTime: '12:40', lateTime: '11:10', attendanceLimit: 1 },
   { name: '3コマ目', startTime: '13:50', endTime: '15:20', lateTime: '14:00', attendanceLimit: 1 },
   { name: '4コマ目', startTime: '15:30', endTime: '17:00', lateTime: '15:40', attendanceLimit: 1 }

@@ -29,7 +29,7 @@ app.post('/login', async (req, res) => {
     // Google Sheets API で指定のフォルダ内のシート一覧を取得
     authorize().then(async (auth) => {
       const sheets = google.sheets({ version: 'v4', auth });
-      const spreadsheetId = '1yWF-VgSZhwn2fAN5riMataMHxTUNhl7LO0-euUSJ9So';
+      const spreadsheetId = '1yWF-VgSZhwn2fAN5riMataMHxTUNhl7LO0-euUSJ9So';//学生が確認できるシートID
 
       const sheetList = await sheets.spreadsheets.get({ spreadsheetId });
 

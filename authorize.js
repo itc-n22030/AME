@@ -2,7 +2,7 @@
 
 const { google } = require('googleapis');
 
-const keyPath = 'C:\\Users\\n22030masa\\MASATO\\NODE\\project\\key\\my-project-dakoku-406113-2d5b4c8768aa.json';
+const keyPath = GOOGLE_SHEETS_API_KEY_PATH;
 
 async function authorize() {
   const keyFile = require(keyPath);
